@@ -1,0 +1,30 @@
+<mat-form-field *ngIf="control && type" 
+  class="myInput" 
+  [ngClass]="type ==='ext' ? 'ext' : ''"
+  appearance="fill"
+>
+  <mat-label>{{ inputLabel }} </mat-label>
+  <input 
+  *ngIf="type !== 'tel'&& type !== 'ext'"
+  matInput
+  #bekahInput 
+  [formControl]="control"
+  [type]="type" 
+  [placeholder]="placeholder"
+  required={{required}}>
+  <input 
+  *ngIf="type === 'tel' || type === 'ext'"
+  matInput
+  #bekahInput 
+  bekahsPhoneMask
+  [isExt]="type === 'ext'"
+  [formControl]="control"
+  [type]="type" 
+  [placeholder]="placeholder"
+  required={{required}}>
+  <mat-error *ngIf="control.invalid">{{ getErrorMessage() }}</mat-error>
+  <mat-icon matSuffix
+  class="input__info" 
+  *ngIf="showTooltip" 
+  matTooltip={{tooltipText}}>info</mat-icon>
+</mat-form-field>

@@ -1,0 +1,56 @@
+<div fxFlex="100%" fxLayout="column">
+  <h1>Welcome to the Forms page</h1>
+  <mat-divider class="forms-divider"></mat-divider>
+  <div class="form-page" fxFlex="100%" fxLayout="column">
+    <h3>{{welcomeText}}</h3>
+    <div class="standard-form" *ngIf="randoForm" fxFlex fxLayout="row wrap" fxLayoutAlign="space-between">
+      <bekahs-input
+        fxFlex 
+        [control]="randoForm.controls.name"
+        label="Name"
+        showTooltip="true"
+        disabled="false"
+        placeholder="e.g. John Doe"
+        tooltipText="Your Name. Input will validate for content and length (20 max) on blur."
+        required="true"></bekahs-input>
+      <bekahs-input
+        fxFlex
+        [control]="randoForm.controls.email"
+        label="Email"
+        placeholder="e.g. bekahiscool@gmail.com"
+        disabled="false"
+        showTooltip="true"
+        required="true"
+        tooltipText="Your email. Input will validate for content, email format, and length(20)"
+      ></bekahs-input>
+      <div class="standard-form__phone" fxFlex fxLayout="row nowrap">
+        <bekahs-input
+          fxFlex="75"
+          fxFlex.xs="70"
+          [control]="randoForm.controls.phone"
+          type="tel"
+          placeholder="(xxx)-xxx-xxxx"
+          label="Phone Number"
+          disabled="false"
+          showTooltip="true"
+          required="true"
+          tooltipText="Your Phone Number. Input will validate length of input. Bekah's phone mask directive applied (e.g. (123)-123-1234)"
+        ></bekahs-input>
+        <bekahs-input
+          fxFlex="25"
+          fxFlex.xs="30"
+          class="standard-form__phone__ext"
+          [control]="randoForm.controls.ext"
+          disabled="false"
+          label="ext"
+          placeholder="123 or 1234"
+          type="ext"
+          required="false"
+          showTooltip="true"
+          tooltipText="Extension to your phone number, if availble. Will validate length(4) and append to phone for submit."
+          >
+        </bekahs-input>
+      </div>
+    </div>
+  </div>
+</div>

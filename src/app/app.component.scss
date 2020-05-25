@@ -1,0 +1,11 @@
+mat-card{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+@media (max-width: 768px) {
+  mat-card{
+    margin:0;
+    width:100%
+  }
+}

@@ -1,0 +1,27 @@
+
+.forms-divider{
+  position: relative;
+}
+.form-page{
+  margin-top: 20px;
+
+  .standard-form {
+    max-width: 50%;
+    margin-left: 3em;
+    margin-right: 3em;
+    bekahs-input {
+      margin-right: 1em;
+    }
+
+    &__phone {
+      width:100%;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .standard-form{
+    width:100%;
+    // margin: 2em;
+  }
+}
