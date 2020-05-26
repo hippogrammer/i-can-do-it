@@ -22,6 +22,9 @@ import { AppNavComponent } from './app-nav/app-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { NGRX_IMPORTS } from './ngrx-imports';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,11 +37,13 @@ import { MatListModule } from '@angular/material/list';
     WrappersModule,
     DirectivesModule,
     //external
+    ...NGRX_IMPORTS,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatToolbarModule,
     MatButtonModule,
+    MatSnackBarModule,
     MatIconModule,
     MatTooltipModule,
     MatCardModule,

@@ -62,11 +62,9 @@ export class InputComponent implements OnInit, OnChanges, AfterViewChecked {
       }
     } 
 }
-  constructor(private cd: ChangeDetectorRef) { }
+  constructor(private cd: ChangeDetectorRef) {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit() {}
 
   ngAfterViewChecked() {
     this.cd.detectChanges();

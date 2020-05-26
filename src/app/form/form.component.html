@@ -86,11 +86,19 @@
     <mat-divider class="xs-divider"></mat-divider>
     <div class="description" *ngIf="randoForm" fxFlex fxLayout="column">
       <h4><i>Bekah's Input</i></h4>
-      <p>I created a wrapper component called <code>bekahs-input</code> for the Angular Material Input component to handle multiple input types (text, email, password, date, tel, ext, time, and url). 
+      <p>I created a wrapper component called <code>bekahs-input</code> for the 
+        Angular Material Input component to handle multiple input types 
+        (text, email, password, date, tel, ext, time, and url). 
       </p> 
-      <p><code>bekahsPhoneMask</code> is a custom directive puts the  "(000)-000-0000" mask on the phone input, and "000" or "0000" format on the ext input.</p><br>
+      <p><code>bekahsPhoneMask</code> is a custom directive puts the  
+        "(000)-000-0000" mask on the phone input, and "000" or "0000" format on 
+        the ext input.
+      </p><br>
       <h4><i>State Management</i></h4>
-      <p>When you hit submit, the information you provided in the form will be saved to the state via NGRX in localstorage. The app will then use the information throughout the application. Hit the "Reset State" button to clear it.</p>
+      <p>When you hit submit, the information you provided in the form will be 
+        saved to the state via NGRX in <code>localStorage</code>. The app will then use the 
+        information throughout the application. Hit the "Reset State" button located in the nav menu to
+         clear it.</p>
     </div>
   </div>
 </div>

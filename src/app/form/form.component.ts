@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { formSubmittedAction } from './ngrx/form.actions';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-form',
@@ -15,16 +18,16 @@ export class FormComponent implements OnInit {
     company: ['', [Validators.maxLength(40)]],
     jobTitle: ['', [Validators.required, Validators.maxLength(40)]],
   });
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private store: Store,
+    private sb: MatSnackBar) { }
 
-  ngOnInit(): void {
-    
-  }
-  formChanged() {
-    console.log(this.randoForm.controls.input);
-  }
+  ngOnInit(): void {}
 
   onFormSubmit() {
-    console.log(this.randoForm);
+    this.store.dispatch(formSubmittedAction({profile: this.randoForm.getRawValue()}))
+    this.sb.open(`Thanks, ${this.randoForm.controls.name.value}!`, 'shut up', { duration: 2000 });
+    this.randoForm.reset();
   }
 }

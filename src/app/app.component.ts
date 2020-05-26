@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'i-can-do-it';
+  //state = this.store.pipe(select())
+  constructor(private store: Store){}
 }
