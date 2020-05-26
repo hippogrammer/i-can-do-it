@@ -12,8 +12,9 @@ export class FormComponent implements OnInit {
     email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]],
     phone: ['', [Validators.required]],
     ext: ['', [Validators.minLength(3), Validators.maxLength(4)]],
+    company: ['', [Validators.maxLength(40)]],
+    jobTitle: ['', [Validators.required, Validators.maxLength(40)]],
   });
-  welcomeText: string = 'Welcome to the forms page! I am using reactive forms in this page. The FormBuilder is being used to group form controls being displayed on the page. Hover each control to see its functionality.';
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
@@ -21,5 +22,9 @@ export class FormComponent implements OnInit {
   }
   formChanged() {
     console.log(this.randoForm.controls.input);
+  }
+
+  onFormSubmit() {
+    console.log(this.randoForm);
   }
 }

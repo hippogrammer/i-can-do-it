@@ -1,9 +1,16 @@
 <div fxFlex="100%" fxLayout="column">
   <h1>Welcome to the Forms page</h1>
   <mat-divider class="forms-divider"></mat-divider>
-  <div class="form-page" fxFlex="100%" fxLayout="column">
-    <h3>{{welcomeText}}</h3>
-    <div class="standard-form" *ngIf="randoForm" fxFlex fxLayout="row wrap" fxLayoutAlign="space-between">
+  
+  <h3>One thing I love about the Angular framework is the amount of 
+    features and support it has for forms. For this particular form below, 
+    I used the <code>ReactiveFormsModule</code> and <code>FormBuilder</code> to build and 
+    group the controls. Each <code>FormControl</code> has at least one validator built in. 
+    The Submit button will listen to the status of the form and will be enabled only when the form 
+    is valid.
+  </h3>
+  <div class="form-page">
+    <div class="standard-form" *ngIf="randoForm" fxFlex fxLayout="column" fxLayoutAlign="space-between">
       <bekahs-input
         fxFlex 
         [control]="randoForm.controls.name"
@@ -51,6 +58,39 @@
           >
         </bekahs-input>
       </div>
+      <bekahs-input
+        fxFlex
+        label="Job Title"
+        type="text"
+        [control]="randoForm.controls.jobTitle"
+        required="true"
+        showTooltip="true"
+        tooltipText="Your job title. Input will validate content and max length of 40."></bekahs-input>
+      <bekahs-input
+        fxFlex
+        label="Company"
+        type="text"
+        [control]="randoForm.controls.company"
+        required="false"
+        showTooltip="true"
+        tooltipText="The company you work for, if available. Input will validate max length(40)"></bekahs-input>
+      
+      <div class="submit-form" fxLayoutAlign="flex-end">
+        <button 
+          mat-raised-button 
+          color="primary"
+          (click)="onFormSubmit()"
+          [disabled]="randoForm.status === 'INVALID'">Submit</button>
+      </div>
+    </div>
+    <mat-divider class="xs-divider"></mat-divider>
+    <div class="description" *ngIf="randoForm" fxFlex fxLayout="column">
+      <h4><i>Bekah's Input</i></h4>
+      <p>I created a wrapper component called <code>bekahs-input</code> for the Angular Material Input component to handle multiple input types (text, email, password, date, tel, ext, time, and url). 
+      </p> 
+      <p><code>bekahsPhoneMask</code> is a custom directive puts the  "(000)-000-0000" mask on the phone input, and "000" or "0000" format on the ext input.</p><br>
+      <h4><i>State Management</i></h4>
+      <p>When you hit submit, the information you provided in the form will be saved to the state via NGRX in localstorage. The app will then use the information throughout the application. Hit the "Reset State" button to clear it.</p>
     </div>
   </div>
 </div>

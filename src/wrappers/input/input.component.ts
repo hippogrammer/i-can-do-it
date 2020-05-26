@@ -14,7 +14,6 @@ export enum INPUT_TYPES {
   week = 'week'
 }
 
-
 @Component({
   selector: 'bekahs-input',
   templateUrl: './input.component.html',

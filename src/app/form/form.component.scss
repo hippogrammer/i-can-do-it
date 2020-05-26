@@ -1,27 +1,59 @@
 
-.forms-divider{
-  position: relative;
-}
-.form-page{
-  margin-top: 20px;
-
-  .standard-form {
-    max-width: 50%;
-    margin-left: 3em;
-    margin-right: 3em;
-    bekahs-input {
-      margin-right: 1em;
+@media (min-width: 768px){
+  .forms-divider{
+    position: relative;
+  }
+  .form-page{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    .standard-form {
+      padding-top: 2em;
+      padding-bottom: 2em;
+      max-width: 50%;
+      margin-left: 1em;
+      padding-right: 1em;
+      border-right: rgba(0,0,0,.12) solid 1px;
+      height: 100%;
+      bekahs-input {
+        margin-right: 1em;
+      }
     }
-
-    &__phone {
-      width:100%;
+    .description{
+      margin-left: 1em;
+    }
+    .xs-divider {
+      display: none;
     }
   }
 }
 
-@media (min-width: 768px) {
-  .standard-form{
-    width:100%;
-    // margin: 2em;
+@media (max-width: 768px) {
+  .forms-divider{
+    display: none;
+  }
+  .form-page{
+    display: flex;
+    flex-direction: column;
+    
+    .standard-form{
+      margin: 0;
+      padding-top: 0;
+      padding-bottom: 2em;
+      max-width: 100%;
+      border: none;
+      bekahs-input {
+        margin-right: 1em;
+      }
+    }
+
+    .xs-divider{
+      display: flex;
+      position: relative;
+    }
+
+    .description {
+      margin-top: 3em;
+    }
   }
 }
