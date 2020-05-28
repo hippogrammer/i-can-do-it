@@ -7,9 +7,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 app-root {
   flex-direction: column;
   width: 100%;
-  code {
-    background-color: grayscale($color: #bdbdbd);
-    padding: 2px 4px;
-    color:rgb(47, 92, 145);
-  }
+}
+code {
+  background-color: grayscale($color: #bdbdbd);
+  padding: 2px 4px;
+  color:rgb(47, 92, 145);
+}
+a { 
+  text-decoration: none; 
 }

@@ -24,6 +24,10 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NGRX_IMPORTS } from './ngrx-imports';
+import { CoolSvgComponent } from './common/cool-svg/cool-svg.component';
+import { GenericDialogComponent } from './common/generic-dialog/generic-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { SignUpFormComponent } from './common/sign-up-form/sign-up-form.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,9 @@ import { NGRX_IMPORTS } from './ngrx-imports';
     HomeComponent,
     FormComponent,
     AppNavComponent,
+    CoolSvgComponent,
+    GenericDialogComponent,
+    SignUpFormComponent,
   ],
   imports: [
     //internal 
@@ -42,6 +49,7 @@ import { NGRX_IMPORTS } from './ngrx-imports';
     BrowserAnimationsModule,
     AppRoutingModule,
     MatToolbarModule,
+    MatDialogModule,
     MatButtonModule,
     MatSnackBarModule,
     MatIconModule,

@@ -7,13 +7,13 @@ import { FormComponent } from './form/form.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'form',
+    component: HomeComponent,
     pathMatch: 'full'
   },
   {
     path: 'form',
     component: FormComponent
-  }
+  },
 ];
 
 
@@ -21,4 +21,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+ }

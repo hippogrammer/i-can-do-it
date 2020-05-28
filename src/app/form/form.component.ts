@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { formSubmittedAction } from './ngrx/form.actions';
+import { formSubmittedAction } from '../app-nav/ngrx/user/user.actions';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
@@ -25,8 +25,8 @@ export class FormComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onFormSubmit() {
-    this.store.dispatch(formSubmittedAction({profile: this.randoForm.getRawValue()}))
+  onFormSubmit(event) {
+    this.store.dispatch(formSubmittedAction({ user: this.randoForm.getRawValue()}))
     this.sb.open(`Thanks, ${this.randoForm.controls.name.value}!`, 'shut up', { duration: 2000 });
     this.randoForm.reset();
   }

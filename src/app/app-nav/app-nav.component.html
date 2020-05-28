@@ -2,15 +2,21 @@
   <mat-sidenav #drawer 
       class="sidenav" 
       fixedInViewport="false"
-      [ngClass]="{hidden: (isHandset$ | async) === false}"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [ngClass]="{hidden: isHandset === false}"
+      [attr.role]="isHandset ? 'dialog' : 'navigation'"
+      [mode]="isHandset ? 'over' : 'side'"
+      [opened]="isHandset === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <a
+       mat-list-item 
+       (click)="drawer.toggle()"
+       routerLink="/">
+       <mat-icon>home</mat-icon></a>
+      <a 
+      mat-list-item 
+      routerLink="form">Form</a>
+      <a mat-list-item href="#">Todo</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -20,16 +26,16 @@
         aria-label="Toggle sidenav"
         mat-icon-button
         (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        *ngIf="isHandset">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Rebekah's Stuff</span>
+      <span>Rebekah Yau</span>
       <span class="spacer"></span>
       <mat-nav-list 
-        *ngIf="!(isHandset$ | async)">
-        <a mat-list-item href="#">Link 1</a>
-        <a mat-list-item href="#">Link 2</a>
-        <a mat-list-item href="#">Link 3</a>
+        *ngIf="!isHandset">
+        <a mat-list-item routerLink="/">Home</a>
+        <a mat-list-item routerLink="form">Form</a>
+        <a mat-list-item href="#">Todo</a>
       </mat-nav-list>
     </mat-toolbar>
     <ng-content></ng-content>

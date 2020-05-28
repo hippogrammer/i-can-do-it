@@ -7,20 +7,12 @@
     margin-top: 20px;
     display: flex;
     flex-direction: row;
-    .standard-form {
-      padding-top: 2em;
-      padding-bottom: 2em;
-      max-width: 50%;
-      margin-left: 1em;
-      padding-right: 1em;
-      border-right: rgba(0,0,0,.12) solid 1px;
-      height: 100%;
-      bekahs-input {
-        margin-right: 1em;
-      }
-    }
     .description{
       margin-left: 1em;
+      max-width: 50%;
+    }
+    app-sign-up-form {
+      max-width: 50%;
     }
     .xs-divider {
       display: none;
@@ -29,6 +21,9 @@
 }
 
 @media (max-width: 768px) {
+  .form-page-container {
+    padding: 1em;
+  }
   .forms-divider{
     display: none;
   }

@@ -1,1 +1,33 @@
-<h1>Hello, Welcome to my Portfolio</h1>
+<div class="home-container">
+  <div class="rainbow-svg">
+    <bekahs-cool-svg></bekahs-cool-svg>
+    <span class="bkg-info">
+      <mat-icon 
+        matSuffix
+        (click)="openDialog()"
+      >info</mat-icon>
+    </span>
+  </div>
+  <span class="welcome-text" *ngIf="!(userName$ | async)">Welcome!</span>
+  <span class="welcome-text" *ngIf="userName$ | async">Welcome back, {{userName$ | async}}!</span>
+  <span class="responsive-text" *ngIf="(isHandset$ | async)">
+    <h3>touch the triangles to see a rainbow!</h3>
+  </span>
+  <mat-divider></mat-divider>
+  <div class="home-content">
+    <div class="profile-container">
+      <img src="assets/images/profile-pic.jpg" alt="Photo of me on my throne" class="profile-image">
+    </div>
+    <div class="description-text">
+      <p>Welcome, I am so happy you are here! My name is Rebekah Yau and I am a UI Engineer at VMware.
+    </p>
+    </div>
+  </div>
+</div>
+
+<ng-template #svgDialog>
+  <p>This cool animated background was a direct copy off of <a href="http://www.polyfill.io">polyfill.io</a>.
+    I came across this site while I was doing some research and immediately marveled at the background of their home page and thought, <i>"Hey I know how to write that!"</i>
+    This is my take on it... I drew the <code>path</code> elements using a generator and used the same colors as polyfill's website. I wrote the animations using Angular's <code>BrowserAnimationsModule</code>
+    inside of <code>bekahsRainbowHover</code> directive and stuck that on each <code>path</code> element.</p>
+</ng-template>

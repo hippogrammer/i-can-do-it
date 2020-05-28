@@ -1,7 +1,8 @@
-<app-nav>
+<app-nav [isHandset]="isHandset$ | async">
   <div>
-    <mat-card> 
+    <mat-card *ngIf="(isHandset$ | async)! === false"> 
       <router-outlet></router-outlet>
     </mat-card>
+    <router-outlet *ngIf="(isHandset$ | async)"></router-outlet>
 </div>
 </app-nav>

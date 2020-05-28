@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Store, select } from '@ngrx/store';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
+import { shareReplay, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +11,10 @@ import { Store, select } from '@ngrx/store';
 })
 export class AppComponent {
   title = 'i-can-do-it';
-  //state = this.store.pipe(select())
-  constructor(private store: Store){}
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  .pipe(
+    map(result => result.matches),
+    shareReplay()
+  );
+constructor(private breakpointObserver: BreakpointObserver, private store: Store){}
 }

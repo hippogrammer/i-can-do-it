@@ -1,7 +1,7 @@
 import { ActionReducer, Action } from '@ngrx/store';
 import {merge, pick} from 'lodash';
 const appKey = "BekahsProfilePage";
-const stateKeys = ['profile'];
+const stateKeys = ['user'];
 export function saveToLocalStorage(state, appKey) {
   localStorage.setItem(appKey, JSON.stringify(state));
 }

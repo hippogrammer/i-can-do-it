@@ -1,9 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 
-export enum FormActions {
+export enum UserActions {
   FormSubmitted = '[form] - Form Submitted',
 };
 
 export const formSubmittedAction = createAction(
-  FormActions.FormSubmitted,
-  props<{ profile: {} }>());
+  UserActions.FormSubmitted,
+  props<{ user: {} }>());

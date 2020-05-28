@@ -1,12 +1,12 @@
 
 import { storageMetaReducer } from './metaReducers';
 import { MetaReducer, StoreModule } from '@ngrx/store';
-import { formReducer } from './form/ngrx/form.reducer';
+import { userReducer } from './app-nav/ngrx/user/user.reducer';
 import { StoreRouterConnectingModule } from '@ngrx/router-store'; 
 
 export const metaReducers: MetaReducer<any>[] = [storageMetaReducer];
 
 export const NGRX_IMPORTS = [
-  StoreModule.forRoot({ profile: formReducer }, { metaReducers }),
+  StoreModule.forRoot({ user: userReducer }, { metaReducers }),
   StoreRouterConnectingModule.forRoot(),
 ];
