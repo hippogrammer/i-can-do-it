@@ -1,0 +1,9 @@
+svg{
+  width: 100%;
+}
+@media (max-width: 768px) {
+  svg{
+    width: auto;
+    margin-left: -180px;
+  }
+}

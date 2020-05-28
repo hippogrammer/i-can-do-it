@@ -1,0 +1,26 @@
+
+@media (min-width: 768px){
+  .standard-form {
+    padding: 2em 3em;
+    width: 100%;
+    margin-left: 1em;
+    border-right: rgba(0,0,0,.12) solid 1px;
+    height: 100%;
+    bekahs-input {
+      margin-right: 1em;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .standard-form{
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 2em;
+    max-width: 100%;
+    border: none;
+    bekahs-input {
+      margin-right: 1em;
+    }
+  }
+}
