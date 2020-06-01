@@ -57,6 +57,9 @@ export class InputComponent implements OnInit, OnChanges, AfterViewChecked {
       case this.control.hasError('minlength'): {
         return `min ${this.control.errors.minlength.requiredLength} digits`;
       }
+      case this.control.hasError('maxlength'): {
+        return `max ${this.control.errors.maxlength.requiredLength} digits`;
+      }
       default: {
         return 'your entry is invalid';
       }
