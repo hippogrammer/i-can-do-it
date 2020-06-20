@@ -13,7 +13,7 @@ export class FormComponent implements OnInit {
   randoForm = this.fb.group({
     name: ['', [Validators.required, Validators.maxLength(20)]],
     email: ['', [Validators.required, Validators.email, Validators.maxLength(30)]],
-    phone: ['', [Validators.required, Validators.maxLength(10)]],
+    phone: ['', [Validators.required]],
     ext: ['', [Validators.minLength(3), Validators.maxLength(4)]],
     company: ['', [Validators.maxLength(40)]],
     jobTitle: ['', [Validators.required, Validators.maxLength(40)]],
