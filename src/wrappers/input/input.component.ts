@@ -60,12 +60,6 @@ export class InputComponent implements OnInit, OnChanges, AfterViewChecked {
         return `min ${this.control.errors.minlength.requiredLength} digits`;
       }
       case this.control.hasError('maxlength'): {
-        let maxLen = this.control.errors.maxlength.requiredLength; 
-        if(this.type === INPUT_TYPES.tel) {
-          if(this.control.value.replace(/[\(\)\-]/g, '').length > maxLen){
-            return `max ${this.control.errors.maxlength.requiredLength} digits`;
-          }else { break } 
-        }
         return `max ${this.control.errors.maxlength.requiredLength} digits`;
       }
       default: {
