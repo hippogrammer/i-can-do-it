@@ -16,8 +16,7 @@ app.use(
 app.use(express.static(__dirname + '/dist/i-can-do-it'));
 app.use('/user', user);
 app.get('*', function(req,res) {
-    
-res.sendFile(path.join(__dirname+'/dist/i-can-do-itx/index.html'));
+  res.sendFile(path.join(__dirname+'/dist/i-can-do-it/index.html'));
 });
 const ngPort = process.env.PORT || 8080;
 // Start the app by listening on the default Heroku port
