@@ -10,7 +10,7 @@ app.use(
   bodyParser.urlencoded({
     extended: true,
   })
-)
+);
 
 // Serve only the static files form the dist directory
 app.use(express.static(__dirname + '/dist/i-can-do-it'));

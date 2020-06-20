@@ -1,11 +1,17 @@
-const Pool = require('pg').Pool
+require('dotenv').config();
+
+const Pool = require('pg').Pool;
 const pool = new Pool({
-  user: 'iugrebiioqmwiz',
-  password: 'f45cd9ee6937fcb977fafe0c4c786e6f474ce925fa7ba2ce6099a8397827f803',
-  host: 'ec2-35-174-127-63.compute-1.amazonaws.com',
-  database: 'dcbfqglfo5cvp',
+  user: process.env.DB_USER,
+  password: process.env.DB_PW,
+  host: process.env.DB_HOST,
+  database: process.env.DB_NAME,
   table: 'users',
-  port: 5432,
+  port: process.env.DB_PORT,
+  ssl: {
+    rejectUnauthorized: false,
+  }
+
 });
 
 const getUsers = (request, response) => {
@@ -18,9 +24,7 @@ const getUsers = (request, response) => {
 }
 
 const getUserById = (request, response) => {
-  const id = parseInt(request.params.id)
-
-  pool.query('SELECT * FROM users WHERE id = $1', [id], (error, results) => {
+  pool.query('SELECT * FROM users WHERE id = $1', [request.id], (error, results) => {
     if (error) {
       throw error
     }
