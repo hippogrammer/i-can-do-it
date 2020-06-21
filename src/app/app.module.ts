@@ -28,7 +28,7 @@ import { CoolSvgComponent } from './common/cool-svg/cool-svg.component';
 import { GenericDialogComponent } from './common/generic-dialog/generic-dialog.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SignUpFormComponent } from './common/sign-up-form/sign-up-form.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import {  HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -52,6 +52,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatToolbarModule,
     MatDialogModule,
     MatButtonModule,
+    HttpClientModule,
     MatSnackBarModule,
     MatIconModule,
     MatTooltipModule,
@@ -66,7 +67,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     MatListModule,
 
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
