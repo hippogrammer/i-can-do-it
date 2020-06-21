@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { GenericDialogComponent } from '../common/generic-dialog/generic-dialog.component';
 import { Store, select } from '@ngrx/store';
 import { getName } from '../app-nav/ngrx/user/user.selector';
+import { UserService } from '../services/user/user.service';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
     private breakpointObserver: BreakpointObserver,
     public dialog: MatDialog,
     public store: Store,
+    public userService: UserService,
   ) { }
 
   openDialog(){
